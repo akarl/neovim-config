@@ -52,6 +52,7 @@ return {
 					lsp_references = { theme = "ivy" },
 					lsp_incoming_calls = { theme = "ivy" },
 					lsp_outgoing_calls = { theme = "ivy" },
+					git_status = { theme = "ivy" },
 				},
 				extensions = {
 					file_browser = {
