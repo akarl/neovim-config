@@ -27,7 +27,7 @@ vim.opt["number"] = false
 vim.opt["colorcolumn"] = "9999"
 vim.opt["shiftwidth"] = 4
 vim.opt["tabstop"] = 4
-vim.opt["expandtab"] = true
+vim.opt["expandtab"] = false
 vim.opt["laststatus"] = 2
 vim.opt["backup"] = false
 vim.opt["swapfile"] = false
@@ -35,7 +35,7 @@ vim.opt["shell"] = "/usr/local/bin/zsh"
 vim.opt["equalalways"] = false
 vim.opt["grepprg"] = "rg --vimgrep"
 vim.opt["inccommand"] = "nosplit"
-vim.opt["cmdheight"] = 0
+vim.opt["cmdheight"] = 1
 vim.opt["ignorecase"] = true
 vim.opt["smartcase"] = true
 -- vim.opt["wildmode"] = "longest:full"
@@ -51,7 +51,6 @@ vim.opt["sidescrolloff"] = 5
 vim.opt["scrolloff"] = 5
 vim.opt["autoindent"] = true
 vim.opt["timeoutlen"] = 700
--- vim.opt["fillchars"] = "stl: ,stlnc: ,fold: ,diff: "
 
 -- Ensures that we are always relative to the current directory.
 vim.api.nvim_create_autocmd("BufWinEnter", { command = "cd ." })

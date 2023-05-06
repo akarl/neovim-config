@@ -2,13 +2,11 @@ return {
 	"sheerun/vim-polyglot",
 	"tpope/vim-commentary",
 	"tpope/vim-eunuch",
-	-- "tpope/vim-repeat",
-	-- "tpope/vim-surround",
+	"tpope/vim-repeat",
 
 	{
 		"stevearc/oil.nvim",
 		opts = {},
-		-- Optional dependencies
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 
@@ -46,27 +44,23 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter-textobjects",
+		},
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				highlight = {
 					enable = true,
 					additional_vim_regex_highlighting = false,
 				},
+				textobjects = { enable = true },
 				incremental_selection = {
 					enable = true,
 				},
 				indent = {
-					enable = false,
+					enable = true,
 				},
 			})
-		end,
-	},
-
-	{
-		"nvim-treesitter/nvim-treesitter-textobjects",
-		dependencies = { "nvim-treesitter/nvim-treesitter" },
-		config = function()
-			require("nvim-treesitter.configs").setup({})
 		end,
 	},
 
