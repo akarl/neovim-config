@@ -45,6 +45,13 @@ return {
 							},
 						},
 					},
+					lsp_document_symbols = { theme = "ivy" },
+					lsp_dynamic_workspace_symbols = { theme = "ivy" },
+					lsp_definitions = { theme = "ivy" },
+					lsp_implementations = { theme = "ivy" },
+					lsp_references = { theme = "ivy" },
+					lsp_incoming_calls = { theme = "ivy" },
+					lsp_outgoing_calls = { theme = "ivy" },
 				},
 				extensions = {
 					file_browser = {
