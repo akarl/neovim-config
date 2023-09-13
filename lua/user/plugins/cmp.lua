@@ -8,7 +8,6 @@ return {
 			"dcampos/cmp-snippy",
 
 			"zbirenbaum/copilot.lua",
-			"zbirenbaum/copilot-cmp",
 		},
 
 		config = function()
