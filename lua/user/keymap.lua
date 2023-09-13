@@ -16,6 +16,10 @@ M.groupname = function(lhs, desc, bufnr)
 
 	local wk = require("which-key")
 
+	if (type(bufnr) == "boolean" and bufnr) or (type(bufnr) == "number" and bufnr == 0) then
+		bufnr = vim.fn.bufnr()
+	end
+
 	wk.register({
 		[lhs] = { name = desc },
 	}, {

@@ -34,6 +34,7 @@ return {
 					hl.LspReferenceText = { underline = true, bold = true }
 					hl.LspReferenceRead = { underline = true, bold = true }
 					hl.LspReferenceWrite = { underline = true, bold = true }
+					hl.Folded = { fg = c.comment, bg = c.bg }
 				end,
 			})
 

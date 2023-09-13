@@ -6,10 +6,25 @@ return {
 			"hrsh7th/cmp-buffer",
 			"dcampos/nvim-snippy",
 			"dcampos/cmp-snippy",
+
+			"zbirenbaum/copilot.lua",
+			"zbirenbaum/copilot-cmp",
 		},
 
 		config = function()
 			local cmp = require("cmp")
+
+			require("copilot").setup({
+				suggestion = {
+					enabled = true,
+					auto_trigger = true,
+					keymap = {
+						accept = "<TAB>",
+						next = "<C-n>",
+						prev = "<C-p>",
+					},
+				},
+			})
 
 			cmp.setup({
 				snippet = {
@@ -19,7 +34,7 @@ return {
 					end,
 				},
 				window = {
-					-- completion = cmp.config.window.bordered(),
+					completion = cmp.config.window.bordered(),
 					documentation = cmp.config.window.bordered(),
 				},
 				mapping = cmp.mapping.preset.insert({

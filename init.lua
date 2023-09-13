@@ -23,7 +23,7 @@ vim.opt["exrc"] = true
 vim.opt["encoding"] = "utf-8"
 vim.opt["mouse"] = "a"
 vim.opt["clipboard"] = "unnamedplus"
-vim.opt["number"] = false
+vim.opt["number"] = true
 vim.opt["colorcolumn"] = "9999"
 vim.opt["shiftwidth"] = 4
 vim.opt["tabstop"] = 4
@@ -38,6 +38,8 @@ vim.opt["inccommand"] = "nosplit"
 vim.opt["cmdheight"] = 1
 vim.opt["ignorecase"] = true
 vim.opt["smartcase"] = true
+vim.opt["foldmethod"] = "indent"
+vim.opt["foldlevel"] = 0
 -- vim.opt["wildmode"] = "longest:full"
 -- vim.opt["completeopt"] = "menu,menuone,noselect"
 vim.opt["signcolumn"] = "yes:2"
@@ -50,7 +52,7 @@ vim.opt["sidescroll"] = 1
 vim.opt["sidescrolloff"] = 5
 vim.opt["scrolloff"] = 5
 vim.opt["autoindent"] = true
-vim.opt["timeoutlen"] = 700
+vim.opt["timeoutlen"] = 100
 
 -- Ensures that we are always relative to the current directory.
 vim.api.nvim_create_autocmd("BufWinEnter", { command = "cd ." })

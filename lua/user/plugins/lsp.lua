@@ -113,18 +113,19 @@ return {
 						})
 					end
 
-					if client.server_capabilities.codeLensProvider then
-						local au_group = vim.api.nvim_create_augroup("LSPCodeLens" .. ev.buf, {
-							clear = true,
-						})
-						vim.api.nvim_create_autocmd("CursorHold", {
-							group = au_group,
-							callback = function()
-								vim.lsp.codelens.refresh()
-							end,
-							buffer = ev.buf,
-						})
-					end
+					-- if client.server_capabilities.codeLensProvider then
+					-- 	local au_group = vim.api.nvim_create_augroup("LSPCodeLens" .. ev.buf, {
+					-- 		clear = true,
+					-- 	})
+
+					-- 	vim.api.nvim_create_autocmd("CursorHold", {
+					-- 		group = au_group,
+					-- 		callback = function()
+					-- 			vim.lsp.codelens.refresh()
+					-- 		end,
+					-- 		buffer = ev.buf,
+					-- 	})
+					-- end
 				end,
 			})
 		end,
