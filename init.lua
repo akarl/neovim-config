@@ -19,41 +19,39 @@ require("lazy").setup("user/plugins", {
     },
 })
 
-vim.opt["exrc"] = true
-vim.opt["encoding"] = "utf-8"
-vim.opt["mouse"] = "a"
+vim.opt["autoindent"] = true
+vim.opt["backup"] = false
+vim.opt["breakindent"] = true
 vim.opt["clipboard"] = "unnamedplus"
-vim.opt["number"] = false
+vim.opt["cmdheight"] = 0
 vim.opt["colorcolumn"] = "9999"
+vim.opt["cursorline"] = true
+vim.opt["encoding"] = "utf-8"
+vim.opt["equalalways"] = false
+vim.opt["expandtab"] = true
+vim.opt["exrc"] = true
+vim.opt["foldlevel"] = 0
+vim.opt["foldmethod"] = "indent"
+vim.opt["grepprg"] = "rg --vimgrep"
+vim.opt["hidden"] = true
+vim.opt["ignorecase"] = true
+vim.opt["inccommand"] = "nosplit"
+vim.opt["laststatus"] = 3
+vim.opt["linebreak"] = false
+vim.opt["mouse"] = "a"
+vim.opt["number"] = false
+vim.opt["scrolloff"] = 5
+vim.opt["shell"] = "/usr/local/bin/zsh"
 vim.opt["shiftwidth"] = 4
 vim.opt["showmode"] = false
-vim.opt["tabstop"] = 4
-vim.opt["expandtab"] = true
-vim.opt["laststatus"] = 3
-vim.opt["backup"] = false
-vim.opt["swapfile"] = false
-vim.opt["shell"] = "/usr/local/bin/zsh"
-vim.opt["equalalways"] = false
-vim.opt["grepprg"] = "rg --vimgrep"
-vim.opt["inccommand"] = "nosplit"
-vim.opt["cmdheight"] = 1
-vim.opt["ignorecase"] = true
-vim.opt["smartcase"] = true
-vim.opt["foldmethod"] = "indent"
-vim.opt["foldlevel"] = 0
--- vim.opt["wildmode"] = "longest:full"
--- vim.opt["completeopt"] = "menu,menuone,noselect"
-vim.opt["signcolumn"] = "yes:2"
-vim.opt["hidden"] = true
-vim.opt["cursorline"] = true
-vim.opt["wrap"] = false
-vim.opt["linebreak"] = false
-vim.opt["breakindent"] = true
 vim.opt["sidescroll"] = 1
 vim.opt["sidescrolloff"] = 5
-vim.opt["scrolloff"] = 5
-vim.opt["autoindent"] = true
+vim.opt["signcolumn"] = "yes:2"
+vim.opt["smartcase"] = true
+vim.opt["swapfile"] = false
+vim.opt["tabstop"] = 4
 vim.opt["timeoutlen"] = 100
+vim.opt["wrap"] = false
 
 -- Ensures that we are always relative to the current directory.
 vim.api.nvim_create_autocmd("BufWinEnter", { command = "cd ." })
