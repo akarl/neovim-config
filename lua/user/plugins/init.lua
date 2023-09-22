@@ -32,28 +32,24 @@ return {
     },
 
     {
-        "folke/tokyonight.nvim",
-        lazy = false,
+        "catppuccin/nvim",
+        name = "catppuccin",
         priority = 1000,
         config = function()
-            require("tokyonight").setup({
-                style = "night",
-                -- transparent = true,
-                -- styles = {
-                -- 	sidebars = "transparent",
-                -- 	floats = "transparent",
-                -- },
-                on_highlights = function(hl, c)
-                    -- hl.StatusLine = { fg = c.bg, bg = c.green }
-                    hl.WinSeparator = { bg = c.none, fg = c.fg_gutter }
-                    hl.LspReferenceText = { underline = true, bold = true }
-                    hl.LspReferenceRead = { underline = true, bold = true }
-                    hl.LspReferenceWrite = { underline = true, bold = true }
-                    hl.Folded = { fg = c.comment, bg = c.bg }
+            require("catppuccin").setup({
+                flavour = "macchiato", -- latte, frappe, macchiato, mocha
+                show_end_of_buffer = true, -- shows the '~' characters after the end of buffers
+                term_colors = true, -- sets terminal colors (e.g. `g:terminal_color_0`)
+                custom_highlights = function(c)
+                    return {
+                        Comment = { fg = c.overlay0 },
+                        Folded = { fg = c.overlay1, bg = c.none },
+                    }
                 end,
             })
 
-            vim.cmd("colorscheme tokyonight")
+            -- setup must be called before loading
+            vim.cmd.colorscheme("catppuccin")
         end,
     },
 
@@ -89,7 +85,7 @@ return {
 
             require("lualine").setup({
                 options = {
-                    theme = "tokyonight",
+                    theme = "catppuccin",
                 },
                 sections = {
                     lualine_a = { "mode" },
