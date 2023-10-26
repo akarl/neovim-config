@@ -1,22 +1,22 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
-        lazypath,
-    })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
 
 require("lazy").setup("user/plugins", {
-    install = {
-        colorscheme = { "tokyonight" },
-    },
+	install = {
+		colorscheme = { "tokyonight" },
+	},
 })
 
 vim.opt["autoindent"] = true
@@ -37,7 +37,7 @@ vim.opt["grepprg"] = "rg --vimgrep"
 vim.opt["hidden"] = true
 vim.opt["ignorecase"] = true
 vim.opt["inccommand"] = "nosplit"
-vim.opt["laststatus"] = 3
+vim.opt["laststatus"] = 2
 vim.opt["linebreak"] = false
 vim.opt["mouse"] = "a"
 vim.opt["number"] = false
@@ -49,6 +49,7 @@ vim.opt["sidescroll"] = 1
 vim.opt["sidescrolloff"] = 5
 vim.opt["signcolumn"] = "yes:2"
 vim.opt["smartcase"] = true
+vim.opt["spell"] = true
 vim.opt["swapfile"] = false
 vim.opt["tabstop"] = 4
 vim.opt["timeoutlen"] = 100
@@ -58,15 +59,20 @@ vim.opt["wrap"] = false
 vim.api.nvim_create_autocmd("BufWinEnter", { command = "cd ." })
 
 vim.api.nvim_create_autocmd("WinLeave", {
-    callback = function(args)
-        vim.opt["cursorline"] = false
-    end,
+	callback = function(args)
+		vim.opt["cursorline"] = false
+	end,
 })
 
 vim.api.nvim_create_autocmd("WinEnter", {
-    callback = function(args)
-        vim.opt["cursorline"] = true
-    end,
+	callback = function(args)
+		vim.opt["cursorline"] = true
+	end,
 })
 
 require("user/diagnostics").setup()
+
+vim.keymap.set("n", "<up>", ":resize +5<cr>")
+vim.keymap.set("n", "<down>", ":resize -5<cr>")
+vim.keymap.set("n", "<right>", ":vertical resize +5<cr>")
+vim.keymap.set("n", "<left>", ":vertical resize -5<cr>")

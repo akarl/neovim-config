@@ -4,6 +4,7 @@ return {
 		dependencies = {
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-git",
 			"dcampos/nvim-snippy",
 			"dcampos/cmp-snippy",
 
